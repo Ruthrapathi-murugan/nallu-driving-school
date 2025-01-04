@@ -1,0 +1,73 @@
+/* General Styles for About Us Page */
+.about-us {
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9fafb; /* Light background for the section */
+}
+
+.about-us h1 {
+    font-size: 2.5em;
+    color: #1f2937; /* Dark Blue-Gray */
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    color: #6b7280; /* Medium Gray */
+    margin-bottom: 40px;
+}
+
+/* Section Styles */
+.about-section {
+    display: flex;
+    justify-content: space-between; /* Makes two sections appear in one row */
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+}
+
+.about-text {
+    flex: 1 1 50%; /* Allows the text section to take 50% of the available space */
+    padding: 20px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2em;
+    color: #ffcc00; /* Golden color for the heading */
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    color: #4b5563; /* Dark Gray */
+    line-height: 1.6;
+}
+
+/* Image Styles */
+.about-image {
+    flex: 1 1 50%; /* The image will take up 50% of the space */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        align-items: center; /* Center content on smaller screens */
+    }
+
+    .about-text {
+        padding: 15px;
+        text-align: center; /* Center text on mobile */
+    }
+
+    .about-image {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}

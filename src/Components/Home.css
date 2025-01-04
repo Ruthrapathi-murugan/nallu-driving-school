@@ -1,0 +1,105 @@
+/* General Home Styles */
+.home {
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Home Content */
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.home-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-button {
+    background-color: #ffcc00; /* Golden */
+    color: #1f2937; /* Dark Blue-Gray */
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e5b800; /* Darker Golden */
+}
+
+/* Marquee Section */
+.home-marquee {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    position: relative;
+    background-color: black; /* Optional: Black background for contrast */
+}
+
+.marquee-container {
+    display: flex;
+    flex-direction: row; /* Horizontal scrolling */
+    animation: marquee 50s linear infinite; /* Animation for smooth scrolling */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%; /* Set width to accommodate all images horizontally */
+}
+
+.marquee-image {
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    object-fit: cover; /* Ensures image fits the screen without distortion */
+}
+
+/* Keyframes for Left-to-Right Marquee */
+@keyframes marquee {
+    0% {
+        transform: translateX(-100%);
+    }
+    33.33% {
+        transform: translateX(0%);
+    }
+    66.66% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 2em;
+    }
+
+    .home-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}

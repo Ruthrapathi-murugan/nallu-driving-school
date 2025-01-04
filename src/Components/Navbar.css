@@ -1,0 +1,102 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1f2937; /* Dark blue-gray background */
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ffcc00; /* Golden color for logo */
+    font-size: 1.8em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #f3f4f6; /* Lighter hover effect for the logo */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f3f4f6; /* Light gray text */
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #1f2937; /* Dark text on hover */
+    background-color: #ffcc00; /* Golden hover background */
+}
+
+/* Hamburger Menu (Hidden on Larger Screens) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hamburger Animation (Optional) */
+.hamburger:hover span {
+    background-color: #ffcc00; /* Change color when hovered */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f2937; /* Dark blue-gray background */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 20px;
+        text-align: center;
+        font-size: 1.2em;
+        border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+        background-color: #ffcc00; /* Golden hover background */
+        color: #1f2937; /* Dark text on hover */
+    }
+}
