@@ -3,100 +3,135 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #1f2937; /* Dark blue-gray background */
+    padding: 15px 5%;
+    background-color: transparent;
     color: white;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
-.logo a {
-    text-decoration: none;
-    color: #ffcc00; /* Golden color for logo */
-    font-size: 1.8em;
-    font-weight: bold;
-    transition: color 0.3s ease;
+/* Scrolled state OR Dark Nav state (non-home pages) */
+.navbar.scrolled,
+.navbar.dark-nav {
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 10px 5%;
 }
 
-.logo a:hover {
-    color: #f3f4f6; /* Lighter hover effect for the logo */
-}
-
-/* Navigation Links */
-.nav-links {
+.logo-link {
     display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    color: #f3f4f6; /* Light gray text */
-    font-size: 1.1em;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    color: #ffcc00;
+}
+
+/* Desktop Navigation */
+.nav-links.desktop {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links.desktop a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
-    padding: 10px 15px;
-    border-radius: 5px;
+    position: relative;
 }
 
-.nav-links a:hover {
-    color: #1f2937; /* Dark text on hover */
-    background-color: #ffcc00; /* Golden hover background */
+.nav-links.desktop a:not(.contact-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s ease;
 }
 
-/* Hamburger Menu (Hidden on Larger Screens) */
+.nav-links.desktop a:not(.contact-btn):hover::after {
+    width: 100%;
+}
+
+.nav-links.desktop a:hover {
+    color: #ffcc00;
+}
+
+.contact-btn {
+    background-color: #ffcc00;
+    color: #1f2937 !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600 !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    background-color: #e6b800;
+}
+
+/* Hamburger Menu */
 .hamburger {
     display: none;
-    flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
-.hamburger span {
-    background: white;
-    height: 3px;
-    width: 25px;
-    margin: 4px 0;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+/* Mobile Navigation */
+.nav-links.mobile {
+    display: none;
 }
 
-/* Hamburger Animation (Optional) */
-.hamburger:hover span {
-    background-color: #ffcc00; /* Change color when hovered */
-}
-
-/* Responsive Design for Small Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
+    .nav-links.desktop {
         display: none;
-        flex-direction: column;
-        background-color: #1f2937; /* Dark blue-gray background */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .nav-links.active {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.mobile {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #1f2937;
+        gap: 2rem;
+        z-index: 1000;
     }
 
-    .nav-links a {
-        padding: 12px 20px;
-        text-align: center;
-        font-size: 1.2em;
-        border-radius: 5px;
+    .nav-links.mobile a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-        background-color: #ffcc00; /* Golden hover background */
-        color: #1f2937; /* Dark text on hover */
+    .nav-links.mobile a:hover {
+        color: #ffcc00;
     }
 }
